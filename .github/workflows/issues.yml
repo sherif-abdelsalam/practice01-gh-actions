@@ -9,15 +9,4 @@ jobs:
     steps:
       - name: Output Issues
         run: |
-          echo "Issue Title: ${{issues.title}}"
-          echo "Issue Body: ${{issues.body}}"
-          echo "Issue URL: ${{issues.html_url}}"
-          echo "Issue Created At: ${{issues.created_at}}"
-          echo "Issue Updated At: ${{issues.updated_at}}"
-          echo "Issue State: ${{issues.state}}"
-          echo "Issue Labels: ${{issues.labels}}"
-          echo "Issue User Login: ${{issues.user.login}}"
-
-      - name: Output Github
-        run: |
-          echo "${{github}}"
+          echo "${{ toJSON(github.event) }}"
