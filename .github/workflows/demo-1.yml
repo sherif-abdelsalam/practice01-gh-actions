@@ -2,15 +2,15 @@ name: Events Demo 1
 on:
   pull_request:
     types:
-      - opend
-    brancehs:
+      - opened
+    branches:
       - main   ## only main
       - 'dev-*'   ## anything starts with dev- but contains only chracters and numbers
       - 'feat/**' ## anythign starts with feat/ 
 
   workflow_dispatch:
   push:
-    brancehs:
+    branches:
       - main   ## only main
       - 'dev-*'   ## anything starts with dev- but contains only chracters and numbers
       - 'feat/**' ## anythign starts with feat/ 
