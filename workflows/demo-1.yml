@@ -1,0 +1,35 @@
+name: Events Demo 1
+on:
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main   ## only main
+      - 'dev-*'   ## anything starts with dev- but contains only chracters and numbers
+      - 'feat/**' ## anythign starts with feat/ 
+
+  workflow_dispatch:
+  push:
+    branches:
+      - master   ## only main
+      - 'dev-*'   ## anything starts with dev- but contains only chracters and numbers
+      - 'feat/**' ## anythign starts with feat/ 
+    paths-ignore: 
+      - '.github/workflows/*'  ## ignore changes to workflow files
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output event data
+        run: echo "${{ toJSON(github.event) }}"
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Test code
+        run: npm run test
+      - name: Build code
+        run: npm run build
+      - name: Deploy project
+        run: echo "Deploying..."
