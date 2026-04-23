@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main   ## only main
+      - master   ## only main
       - 'dev-*'   ## anything starts with dev- but contains only chracters and numbers
       - 'feat/**' ## anythign starts with feat/ 
     paths-ignore: 
