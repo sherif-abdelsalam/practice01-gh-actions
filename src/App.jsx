@@ -10,7 +10,6 @@ function App() {
         </div>
 
         <h1>Learn & Master GitHub Actions</h1>
-        <h2>Hello, this is sherif and i am practicing on GitHub Actions!</h2>
       </header>
       <MainContent />
     </>
