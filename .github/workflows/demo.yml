@@ -2,11 +2,7 @@ name: Deploy website
 on:
   push:
     branches:
-<<<<<<< HEAD
       - main
-=======
-      - master
->>>>>>> 7ed4d46 (started a new workflow)
 jobs:
   test:
     runs-on: ubuntu-latest
